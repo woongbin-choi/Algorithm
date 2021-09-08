@@ -8,7 +8,6 @@ public class al_11021 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
 		StringTokenizer st;
-	
 		
 		int t = Integer.parseInt(br.readLine());
 		
@@ -21,7 +20,5 @@ public class al_11021 {
 			
 		}
 		System.out.println(sb);
-		
-		
 	}
 }
