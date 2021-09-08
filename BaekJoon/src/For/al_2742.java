@@ -7,16 +7,11 @@ public class al_2742 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 	
-		
 		int t = Integer.parseInt(br.readLine());
 		
 		for (int i = t; i >= 1; --i) {
-			
 			bw.write(i+"\n");
-			
 		}
 		bw.flush();
-		
-		
 	}
 }
