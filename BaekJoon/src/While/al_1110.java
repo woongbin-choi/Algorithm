@@ -19,7 +19,6 @@ public class al_1110 {
 			if(guess == res) break;
 		}
 		
-		
 		System.out.println(count);
 	}
 }
