@@ -12,7 +12,6 @@ public class al_2562 {
 			int input = Integer.parseInt(br.readLine());
 			arr[i] = input;
 		}
-		
 		int check = 0;
 		int max = arr[0];
 		for(int i = 1; i < arr.length; ++i) {
@@ -21,11 +20,7 @@ public class al_2562 {
 				check = i;
 			} 
 		}
-		
 		System.out.println(max);
 		System.out.println(check+1);
-		
-		
-		
 	}
 }
