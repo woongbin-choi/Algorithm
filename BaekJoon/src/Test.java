@@ -4,50 +4,48 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.StringTokenizer;
 
 public class Test {
 
-	public static void main(String[] args) throws NumberFormatException, IOException {
-
-		HashSet<Integer> ranHash = new HashSet<>();
-		while(ranHash.size() <= 3) {
-			int ran_num = (int)(Math.random() * 10);
-			ranHash.add(ran_num);
-		}
-		
-		ArrayList<Integer> ran_array = new ArrayList<>(ranHash);
+	public static void main(String[] args) throws IOException {
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int count = 0;
-
-		while(count < 8) {
-			int user = Integer.parseInt(br.readLine());
-			int[] reverse_array = new int[4];
-
-			for(int i = 0; i < reverse_array.length; ++i) {
-				reverse_array[i] = user % 10;
-				user /= 10;
-			}
-
-			int[] user_array = new int[4];
-			for (int i = reverse_array.length -1, j = 0; i >= 0; --i, ++j) {
-				user_array[j] = reverse_array[i];
-			}
-			int strike = 0, ball = 0;
-
-			for (int i = 0; i < ran_array.size(); ++i) {
-				for (int j = 0; j < user_array.length; ++j) {
-					if (i == j && ran_array.get(i) == user_array[j]) strike++;
-					else if (ran_array.get(i) == user_array[j]) ball++;
+		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+		
+		int N = Integer.parseInt(st.nextToken());
+		int M = Integer.parseInt(st.nextToken());
+		
+		int[] arr = new int[N];
+		
+		st = new StringTokenizer(br.readLine(), " ");
+		
+		for(int i = 0; i < N; ++i) {
+			arr[i] = Integer.parseInt(st.nextToken());
+		}
+		
+		int result = search(arr, N, M);
+		
+		System.out.println(result);
+	}
+	
+	static int search(int[] arr, int N, int M) {
+		int result = 0;
+		
+		for(int i = 0; i < N - 2; ++i) {
+			for (int j = i+1; j < N - 1; ++j) {
+				for (int k = j+1; k < N; ++k) {
+					
+					int temp = arr[i] + arr[j] + arr[k];
+					
+					if (temp == M) return temp;
+					
+					if (result < temp && temp < M) result = temp;
 				}
 			}
-			System.out.println("랜덤 번호"+ran_array.toString());
-			System.out.println("뽑은 번호"+Arrays.toString(user_array));
-			System.out.printf("%dStrike\t%dBall",strike,ball);
-
-			count++;
 		}
-
+		
+		return result;
 	}
 
 }
