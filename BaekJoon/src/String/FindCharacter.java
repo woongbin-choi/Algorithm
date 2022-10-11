@@ -2,6 +2,7 @@ package String;
 
 import java.util.Scanner;
 
+// 문자 찾기
 public class FindCharacter {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
