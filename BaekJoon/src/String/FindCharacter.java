@@ -13,10 +13,14 @@ public class FindCharacter {
 
         int count = 0;
 
-        for (int i = 0; i < str.length(); ++i) {
-            if (str.charAt(i) == c){
-                count++;
-            }
+//        for (int i = 0; i < str.length(); ++i) {
+//            if (str.charAt(i) == c){
+//                count++;
+//            }
+//        }
+
+        for(char x : str.toCharArray()) {
+            if (x == c) count++;
         }
 
         System.out.println(count);
