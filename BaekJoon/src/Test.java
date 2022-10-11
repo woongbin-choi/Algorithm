@@ -12,6 +12,8 @@ public class Test {
 		StringTokenizer st = new StringTokenizer(br.readLine()," ");
 		
 		int N = Integer.parseInt(st.nextToken());
+
+		int y = 0;
 		
 		int[][] arr = new int[N][2];
 		
