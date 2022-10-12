@@ -3,6 +3,7 @@ package String;
 import java.util.Scanner;
 
 // 대소문자 변환
+// 단어 하나 주어지면 대 -> 소, 소 -> 대 로 변환
 public class Conversion {
 
     public static void main(String[] args) {
