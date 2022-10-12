@@ -2,7 +2,9 @@ package String;
 
 import java.util.Scanner;
 
-// 문자 찾기
+/* 문자 찾기
+단어 속 대소문자 구분없이 문자 찾기
+*/
 public class FindCharacter {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
