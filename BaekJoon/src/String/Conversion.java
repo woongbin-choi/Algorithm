@@ -13,11 +13,11 @@ public class Conversion {
         String result = "";
 
         for(char c : str.toCharArray()) {
-//            if (Character.isLowerCase(c)){
-//                result += Character.toUpperCase(c);
-//            } else {
-//                result += Character.toLowerCase(c);
-//            }
+            if (Character.isLowerCase(c)){
+                result += Character.toUpperCase(c);
+            } else {
+                result += Character.toLowerCase(c);
+            }
 
             if (c >= 97 && c <= 122) {
                 result += (char)(c-32);
