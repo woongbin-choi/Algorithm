@@ -1,9 +1,10 @@
 package String;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-// 단어 뒤집기, StringBuilder
+// 단어 뒤집기, StringBuilder, 일일이 뒤집기
 public class ReverseWord {
 
     public static void main(String[] args) {
@@ -22,6 +23,28 @@ public class ReverseWord {
         }
         for(String y : result) {
             System.out.println(y);
+        }
+
+        // 일일이 뒤집기(특정 글자만 바꿀수 있다)
+        ArrayList<String> result2 = new ArrayList<>();
+        for(String z : str) {
+            char[] s = z.toCharArray();
+            int lt = 0;
+            int rt = z.length() -1;
+
+            while(lt < rt) {
+                char tmp = s[lt];
+                s[lt] = s[rt];
+                s[rt] = tmp;
+                lt++;
+                rt--;
+            }
+            String anwser = String.valueOf(s);
+            result2.add(anwser);
+        }
+
+        for(String s : result2){
+            System.out.println(s);
         }
 
     }
