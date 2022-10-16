@@ -8,13 +8,23 @@ public class DigitExtraction {
         Scanner sc = new Scanner(System.in);
         String str = sc.next();
 
-        int result = 0;
+//        int result = 0;
+//
+//        for (char x : str.toCharArray()){
+//            if(x >= 48 && x <= 57){
+//                result = result * 10 + (x - 48);
+//            }
+//        }
 
-        for (char x : str.toCharArray()){
-            if(x >= 48 && x <= 57){
-                result = result * 10 + (x - 48);
+        String s = "";
+
+        for (char x : str.toCharArray()) {
+            if (Character.isDigit(x)) {
+                s += x;
             }
         }
+
+        int result = Integer.parseInt(s);
 
         System.out.println(result);
     }
