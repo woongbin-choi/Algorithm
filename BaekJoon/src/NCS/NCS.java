@@ -214,7 +214,7 @@ public class NCS {
         for(int i = 0; i < 3; ++i) {
             System.out.println(allMenu[i]+"   "+ all_2010[i]+ "      " + all_2011[i] + "      "+ all_2012[i] + "       " + all_2013[i] + "      " + all_2014[i]);
         }
-        System.out.println(allMenu[3]+"   "+ allSumArr.get(0)+ "     " + allSumArr.get(1) + "     "+ allSumArr.get(2) + "      " + allSumArr.get(3) + "     " + allSumArr.get(4));
+        System.out.println(allMenu[3]+"   "+ allSumArr.get(0)+ "      " + allSumArr.get(1) + "     "+ allSumArr.get(2) + "      " + allSumArr.get(3) + "      " + allSumArr.get(4));
 
         int allPeople_2010 = allSumArr.get(0)+all_2010[2];
         int allPeople_2011 = allSumArr.get(0)+all_2011[2];
