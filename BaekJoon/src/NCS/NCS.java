@@ -335,6 +335,35 @@ public class NCS {
         System.out.println("3번) " + thirdArr[lastRan3] + "년의 실업률은? " + answer3 + "%");
         System.out.println("4번) " + thirdArr[lastRan4] + "년의 고용률은? " + answer4 + "%");
         System.out.println("5번) 전년도 대비 고용률의 증가율이 가장 큰 년도는? " + thirdArr[hireIndex] +"년");
+
+
+        System.out.println("# 비율연습");
+        System.out.println("---------------------------비율연습 start------------------------------------");
+        int fourRanNum;
+        double oneRanNum;
+
+
+        for(int i = 0; i < 9; ++i) {
+            fourRanNum = fourRan();
+            oneRanNum = oneRan();
+            String result = String.format("%.1f", fourRanNum * (oneRanNum / 10));
+            System.out.println(i+1+"번) " + fourRanNum + ", " + oneRanNum / 10 + "% ? " +result );
+        }
+
+
+        System.out.println("---------------------------비율연습 End--------------------------------------");
+
+
+    }
+
+    private static int fourRan(){
+        int ranNum = (int) (Math.random() * 9000 + 1000);
+        return ranNum;
+    }
+
+    private static int oneRan() {
+        int ranNum = (int) (Math.random() * 9 + 1);
+        return ranNum;
     }
 
     private static int ren(int beforeRanOneNum){
