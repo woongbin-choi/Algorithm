@@ -217,10 +217,10 @@ public class NCS {
         System.out.println(allMenu[3]+"   "+ allSumArr.get(0)+ "      " + allSumArr.get(1) + "     "+ allSumArr.get(2) + "      " + allSumArr.get(3) + "      " + allSumArr.get(4));
 
         int allPeople_2010 = allSumArr.get(0)+all_2010[2];
-        int allPeople_2011 = allSumArr.get(0)+all_2011[2];
-        int allPeople_2012 = allSumArr.get(0)+all_2012[2];
-        int allPeople_2013 = allSumArr.get(0)+all_2013[2];
-        int allPeople_2014 = allSumArr.get(0)+all_2014[2];
+        int allPeople_2011 = allSumArr.get(1)+all_2011[2];
+        int allPeople_2012 = allSumArr.get(2)+all_2012[2];
+        int allPeople_2013 = allSumArr.get(3)+all_2013[2];
+        int allPeople_2014 = allSumArr.get(4)+all_2014[2];
 
         System.out.println(allMenu[4]+"   "+ allPeople_2010+ "     " + allPeople_2011 + "     "+ allPeople_2012 + "      " + allPeople_2013 + "     " + allPeople_2014);
 
@@ -239,34 +239,116 @@ public class NCS {
         double hireP_2014 = ((double)all_2014[0] / (double) allPeople_2014) * 100;
         String h2014 = String.format("%.2f", hireP_2014);
 
+        double[] hireArr = new double[5];
+        hireArr[0] = hireP_2010;
+        hireArr[1] = hireP_2011;
+        hireArr[2] = hireP_2012;
+        hireArr[3] = hireP_2013;
+        hireArr[4] = hireP_2014;
+
+
         System.out.println(allMenu[5]+"   "+ h2010+ "%     " + h2011 + "%     "+ h2012 + "%      " + h2013 + "%     " + h2014 +"%");
 
-        double lostP_2010 = ((double)all_2010[1] / (double) allPeople_2010) * 100;
+        double lostP_2010 = ((double)all_2010[1] / (double) allSumArr.get(0)) * 100;
         String l2010 = String.format("%.2f", lostP_2010);
 
-        double lostP_2011 = ((double)all_2011[1] / (double) allPeople_2010) * 100;
+        double lostP_2011 = ((double)all_2011[1] / (double) allSumArr.get(1)) * 100;
         String l2011 = String.format("%.2f", lostP_2011);
 
-        double lostP_2012 = ((double)all_2012[1] / (double) allPeople_2010) * 100;
+        double lostP_2012 = ((double)all_2012[1] / (double) allSumArr.get(2)) * 100;
         String l2012 = String.format("%.2f", lostP_2012);
 
-        double lostP_2013 = ((double)all_2013[1] / (double) allPeople_2010) * 100;
+        double lostP_2013 = ((double)all_2013[1] / (double) allSumArr.get(3)) * 100;
         String l2013 = String.format("%.2f", lostP_2013);
 
-        double lostP_2014 = ((double)all_2014[1] / (double) allPeople_2010) * 100;
+        double lostP_2014 = ((double)all_2014[1] / (double) allSumArr.get(4)) * 100;
         String l2014 = String.format("%.2f", lostP_2014);
+
+        double[] loastArr = new double[5];
+        loastArr[0] = lostP_2010;
+        loastArr[1] = lostP_2011;
+        loastArr[2] = lostP_2012;
+        loastArr[3] = lostP_2013;
+        loastArr[4] = lostP_2014;
+
 
         System.out.println(allMenu[6]+"   "+ l2010+ "%     " + l2011 + "%     "+ l2012 + "%       " + l2013 + "%      " + l2014 +"%");
 
         System.out.println("---------------------------종합연습 End------------------------------------");
         // 종합연습[e]
 
+        int beforeNum = (int) (Math.random() * 4 + 1);
+        String beforeYear = thirdArr[beforeNum];
+        int afterNum = ren_last(beforeNum);
+        String afterYear = thirdArr[afterNum];
+
+        double b_dif = Math.abs(loastArr[beforeNum] - loastArr[beforeNum - 1]);
+        double a_dif = Math.abs(loastArr[afterNum] - loastArr[afterNum - 1]);
+
+        String firstResultString = "";
+
+        if(Double.compare(b_dif, a_dif) < 0) {
+            firstResultString = "YES";
+        } else if (Double.compare(b_dif, a_dif) > 0) {
+            firstResultString = "NO";
+        }
+
+        int lastRan3 = (int) (Math.random() * 4);
+        String answer3 = String.format("%.2f", loastArr[lastRan3]);
+
+        int lastRan4 = (int) (Math.random() * 4);
+        String answer4 = String.format("%.2f", hireArr[lastRan4]);
+
+        double max = Double.MIN_VALUE;
+        int answer2 = 0;
+        for(int i = 0; i < 5; ++i) {
+            if(hireArr[i] > max) {
+                max = hireArr[i];
+                answer2 = i;
+            }
+        }
+
+        double min = Double.MAX_VALUE;
+        int answer22 = 0;
+        for(int i = 0; i < 5; ++i) {
+            if(hireArr[i] < min) {
+                min = hireArr[i];
+                answer22 = i;
+            }
+        }
+
+        String answer2String = thirdArr[answer2];
+        String answer22String = thirdArr[answer22];
+
+        double hireMax = Double.MIN_VALUE;
+        int hireIndex = 0;
+        for(int i = 1; i < hireArr.length; ++i) {
+            if (hireArr[i] - hireArr[i - 1] > hireMax) {
+                hireMax = hireArr[i] - hireArr[i - 1];
+                hireIndex = i;
+            }
+        }
+
+
+        System.out.println("1번) 전년도 대비 실업률 변화 차이는 " + beforeYear+ "년 보다 " + afterYear+"년이 더크다? " + firstResultString);
+        System.out.println("2번) 고용률이 가장 높은 년도와 가장 낮은 년도는? " + answer2String+"년 / " + answer22String+"년");
+        System.out.println("3번) " + thirdArr[lastRan3] + "년의 실업률은? " + answer3 + "%");
+        System.out.println("4번) " + thirdArr[lastRan4] + "년의 고용률은? " + answer4 + "%");
+        System.out.println("5번) 전년도 대비 고용률의 증가율이 가장 큰 년도는? " + thirdArr[hireIndex] +"년");
     }
 
     private static int ren(int beforeRanOneNum){
         int ranNum = (int) (Math.random() * 3);
         while(beforeRanOneNum == ranNum){
             ranNum = (int) (Math.random() * 3);
+        }
+        return ranNum;
+    }
+
+    private static int ren_last(int beforeRanOneNum){
+        int ranNum = (int) (Math.random() * 4 + 1);
+        while(beforeRanOneNum == ranNum){
+            ranNum = (int) (Math.random() * 4 + 1);
         }
         return ranNum;
     }
