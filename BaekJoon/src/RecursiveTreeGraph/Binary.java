@@ -4,7 +4,7 @@ package RecursiveTreeGraph;
 public class Binary {
     public static void main(String[] args) {
         Binary T = new Binary();
-        T.DFS(11);
+        T.DFS(13);
     }
 
     public void DFS(int n) {
