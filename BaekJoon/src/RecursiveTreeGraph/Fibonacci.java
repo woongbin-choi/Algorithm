@@ -16,7 +16,6 @@ public class Fibonacci {
             return fibo[n] = DFS(n-2) + DFS(n-1);
         }
     }
-
     public static void main(String[] args) {
         Fibonacci T = new Fibonacci();
         int n = 40;
@@ -26,7 +25,6 @@ public class Fibonacci {
             System.out.print(fibo[i] + " ");
         }
     }
-
 //    public int DFS(int n) {
 //        if(n==1) {
 //            return 1;
@@ -36,7 +34,6 @@ public class Fibonacci {
 //            return DFS(n-2) + DFS(n-1);
 //        }
 //    }
-//
 //    public static void main(String[] args) {
 //        Fibonacci T = new Fibonacci();
 //        int n = 40;
@@ -44,6 +41,4 @@ public class Fibonacci {
 //            System.out.print(T.DFS(i) + " ");
 //        }
 //    }
-
-
 }
