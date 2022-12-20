@@ -1,6 +1,6 @@
 package RecursiveTreeGraph;
 
-// Tree 말단 노드까지의 가장 짧은 경로
+// Tree 말단 노드까지의 가장 짧은 경로(DFS)
 public class DFSTree {
     NodeTree root;
 
