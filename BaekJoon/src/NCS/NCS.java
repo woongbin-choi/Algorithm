@@ -26,6 +26,7 @@ public class NCS {
             arr_2008[i] = (int) (Math.random() * 90) + 10;
         }
         System.out.println("# 사칙연산");
+
         System.out.println("---------------------------사칙연산 Start----------------------------------");
         System.out.println("     "+2005 + "  " + 2006 + "  "+ 2007 + "  " + 2008);
         for(int i = 0; i < 4; ++i) {
