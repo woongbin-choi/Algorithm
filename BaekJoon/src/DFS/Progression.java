@@ -21,7 +21,6 @@ public class Progression {
                 for(int x : p) {
                     System.out.print(x + " ");
                 }
-                System.out.println();
                 flag = true;
             }
         } else {
