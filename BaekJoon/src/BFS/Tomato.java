@@ -12,29 +12,13 @@ public class Tomato {
     static int n, m;
     static Queue<TomatoPoint> Q = new LinkedList<>();
 
-    public void BFS() {
-        while(!Q.isEmpty()) {
-            TomatoPoint tmp = Q.poll();
-            for(int i = 0; i < 4; ++i) {
-                int nx = tmp.x + dx[i];
-                int ny = tmp.y + dy[i];
-                if(nx >= 0 && nx < n && ny >= 0 && ny < m
-                        && board[nx][ny] ==0) {
-                    board[nx][ny] = 1;
-                    Q.offer(new TomatoPoint(nx, ny));
-                    date[nx][ny] = date[tmp.x][tmp.y] + 1;
-                }
-            }
-        }
-    }
-
     public static void main(String[] args) {
         Tomato T = new Tomato();
         Scanner sc = new Scanner(System.in);
         m = sc.nextInt(); // 열
         n = sc.nextInt(); // 행
         board = new int[n][m];
-        date = new int[m][m];
+        date = new int[n][m];
         for(int i = 0; i < n; ++i) {
             for(int j = 0; j < m; ++j) {
                 board[i][j] = sc.nextInt();
@@ -62,6 +46,22 @@ public class Tomato {
             System.out.println(result);
         } else {
             System.out.println(-1);
+        }
+    }
+
+    public void BFS() {
+        while(!Q.isEmpty()) {
+            TomatoPoint tmp = Q.poll();
+            for(int i = 0; i < 4; ++i) {
+                int nx = tmp.x + dx[i];
+                int ny = tmp.y + dy[i];
+                if(nx >= 0 && nx < n && ny >= 0 && ny < m
+                        && board[nx][ny] ==0) {
+                    board[nx][ny] = 1;
+                    Q.offer(new TomatoPoint(nx, ny));
+                    date[nx][ny] = date[tmp.x][tmp.y] + 1;
+                }
+            }
         }
     }
 }
