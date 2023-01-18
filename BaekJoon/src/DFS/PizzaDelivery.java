@@ -21,6 +21,7 @@ public class PizzaDelivery {
             }
             result = Math.min(result, sum);
         } else {
+            // 조합
             for(int i = s; i < pzSize; ++i) {
                 combi[L] = i;
                 DFS(L+1, i+1);
