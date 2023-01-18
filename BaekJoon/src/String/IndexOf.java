@@ -5,9 +5,7 @@ import java.util.Scanner;
 // 문장 속 단어
 // 한개 의 문장 속 가장 긴 단어를 출력 (가장 앞쪽에 위치한 단어)
 public class IndexOf {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String str = sc.nextLine();
+    public String solution(String str) {
         String result = "";
         int max = Integer.MIN_VALUE, pos;
 
@@ -33,7 +31,12 @@ public class IndexOf {
 //                result = s;
 //            }
 //        }
-
-        System.out.println(result);
+        return result;
+    }
+    public static void main(String[] args) {
+        IndexOf T = new IndexOf();
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        System.out.println(T.solution(str));
     }
 }
