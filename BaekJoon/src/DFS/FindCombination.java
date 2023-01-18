@@ -13,7 +13,7 @@ public class FindCombination {
             }
             System.out.println();
         } else {
-            for(int i = s; i <= n; ++i) {
+            for(int i = s; i < n; ++i) {
                 combi[L] = i;
                 DFS(L+1, i+1);
             }
@@ -26,6 +26,6 @@ public class FindCombination {
         n = sc.nextInt();
         m = sc.nextInt();
         combi = new int[m];
-        T.DFS(0,1);
+        T.DFS(0,0);
     }
 }
