@@ -5,11 +5,7 @@ import java.util.Scanner;
 // 대소문자 변환
 // 단어 하나 주어지면 대 -> 소, 소 -> 대 로 변환
 public class Conversion {
-
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String str = sc.next();
-
+    public String solution(String str) {
         String result = "";
 
         for(char c : str.toCharArray()) {
@@ -25,7 +21,12 @@ public class Conversion {
                 result += (char)(c+32);
             }
         }
-
-        System.out.println(result);
+        return result;
+    }
+    public static void main(String[] args) {
+        Conversion T = new Conversion();
+        Scanner sc = new Scanner(System.in);
+        String str = sc.next();
+        System.out.println(T.solution(str));
     }
 }
