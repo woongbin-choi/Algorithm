@@ -15,11 +15,11 @@ public class Conversion {
                 result += Character.toLowerCase(c);
             }
 
-            if (c >= 97 && c <= 122) {
-                result += (char)(c-32);
-            } else {
-                result += (char)(c+32);
-            }
+//            if (c >= 97 && c <= 122) {
+//                result += (char)(c-32);
+//            } else {
+//                result += (char)(c+32);
+//            }
         }
         return result;
     }
