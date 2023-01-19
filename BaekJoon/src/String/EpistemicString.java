@@ -4,11 +4,8 @@ import java.util.Scanner;
 
 // 회문 문자열 (대소문자 구분X)
 public class EpistemicString {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String str = sc.next();
+    public String solution(String str) {
         str = str.toUpperCase();
-
         String result = "YES";
         int len = str.length();
 
@@ -18,7 +15,12 @@ public class EpistemicString {
                 break;
             }
         }
-
-        System.out.println(result);
+        return result;
+    }
+    public static void main(String[] args) {
+        EpistemicString T = new EpistemicString();
+        Scanner sc = new Scanner(System.in);
+        String str = sc.next();
+        System.out.println(T.solution(str));
     }
 }
