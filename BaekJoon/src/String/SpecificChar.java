@@ -4,10 +4,8 @@ import java.util.Scanner;
 
 // 특정 문자 뒤집기
 public class SpecificChar {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String str = sc.next();
-
+    public String solution(String str){
+        String result = "";
         char[] s = str.toCharArray();
         int lt = 0;
         int rt = str.length() - 1;
@@ -25,8 +23,13 @@ public class SpecificChar {
                 rt--;
             }
         }
-        String result = "";
         result = String.valueOf(s);
-        System.out.println(result);
+        return result;
+    }
+    public static void main(String[] args) {
+        SpecificChar T = new SpecificChar();
+        Scanner sc = new Scanner(System.in);
+        String str = sc.next();
+        System.out.println(T.solution(str));
     }
 }
