@@ -5,7 +5,6 @@ import java.util.Scanner;
 // 숫자만 추출
 public class DigitExtraction {
     public int solution(String str){
-        int result = 0;
         String s = "";
         for (char x : str.toCharArray()) {
             if (Character.isDigit(x)) {
@@ -17,7 +16,7 @@ public class DigitExtraction {
 //                result = result * 10 + (x - 48);
 //            }
 //        }
-        result = Integer.parseInt(s);
+        int result = Integer.parseInt(s);
         return result;
     }
     public static void main(String[] args) {
