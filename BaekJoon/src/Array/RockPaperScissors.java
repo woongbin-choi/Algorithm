@@ -4,22 +4,8 @@ import java.util.Scanner;
 
 // 가위바위보
 public class RockPaperScissors {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-
-        int[] a = new int[n];
-        int[] b = new int[n];
-
-        for(int i = 0; i < n; ++i){
-            a[i] = sc.nextInt();
-        }
-        for(int i = 0; i < n; ++i){
-            b[i] = sc.nextInt();
-        }
-
+    public String solution(int n, int[] a, int[] b) {
         String result = "";
-
         for(int i = 0; i < n; ++i){
             if(a[i] == b[i]) {
                 result += "D";
@@ -33,8 +19,21 @@ public class RockPaperScissors {
                 result += "B";
             }
         }
-
-        for(char x : result.toCharArray()) {
+        return result;
+    }
+    public static void main(String[] args) {
+        RockPaperScissors T = new RockPaperScissors();
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] a = new int[n];
+        int[] b = new int[n];
+        for(int i = 0; i < n; ++i){
+            a[i] = sc.nextInt();
+        }
+        for(int i = 0; i < n; ++i){
+            b[i] = sc.nextInt();
+        }
+        for(char x : T.solution(n,a,b).toCharArray()) {
             System.out.println(x);
         }
     }
