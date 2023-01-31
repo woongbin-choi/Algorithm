@@ -4,17 +4,7 @@ import java.util.Scanner;
 
 // 멘토링
 public class Mento {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int m = sc.nextInt();
-        int[][] arr = new int[m][n];
-        for(int i = 0; i < m; ++i){
-            for(int j = 0; j < n; ++j) {
-                arr[i][j] = sc.nextInt();
-            }
-        }
-
+    public int solution(int n, int m, int[][] arr){
         int result = 0;
         for(int i = 1; i <= n; ++i) {
             for(int j = 1; j <= n; ++j) {
@@ -32,7 +22,19 @@ public class Mento {
                 }
             }
         }
-
-        System.out.println(result);
+        return result;
+    }
+    public static void main(String[] args) {
+        Mento T = new Mento();
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int[][] arr = new int[m][n];
+        for(int i = 0; i < m; ++i){
+            for(int j = 0; j < n; ++j) {
+                arr[i][j] = sc.nextInt();
+            }
+        }
+        System.out.println(T.solution(n, m, arr));
     }
 }
