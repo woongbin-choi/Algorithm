@@ -6,20 +6,7 @@ import java.util.Scanner;
 
 // 공통 원소 구하기
 public class TwoPointers2 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int[] a = new int[n];
-        for(int i = 0; i < n; ++i){
-            a[i] = sc.nextInt();
-        }
-
-        int m = sc.nextInt();
-        int[] b = new int[m];
-        for(int i = 0; i < m; ++i){
-            b[i] = sc.nextInt();
-        }
-
+    public ArrayList<Integer> solution(int n, int m, int[] a, int[] b){
         ArrayList<Integer> result = new ArrayList<>();
         Arrays.sort(a);
         Arrays.sort(b);
@@ -34,6 +21,23 @@ public class TwoPointers2 {
                 p2++;
             }
         }
-        System.out.println(result);
+        return result;
+    }
+    public static void main(String[] args) {
+        TwoPointers2 T = new TwoPointers2();
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] a = new int[n];
+        for(int i = 0; i < n; ++i){
+            a[i] = sc.nextInt();
+        }
+
+        int m = sc.nextInt();
+        int[] b = new int[m];
+        for(int i = 0; i < m; ++i){
+            b[i] = sc.nextInt();
+        }
+
+        System.out.println(T.solution(n,m,a,b));
     }
 }
