@@ -2,7 +2,7 @@ package Array;
 
 import java.util.Scanner;
 
-// 연속 부분 수열(복합적 문제)
+//  연속 부분 수열(복합적 문제)
 public class ContinuousSequence {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
