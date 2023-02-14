@@ -4,10 +4,7 @@ import java.util.Scanner;
 
 // 연속된 자연수의 합(two pointers)
 public class ContinuousSum {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-
+    public int solution(int n) {
         int result = 0, sum = 0, lt = 0;
         int m = n/2 + 1;
         int[] arr = new int[m];
@@ -28,7 +25,12 @@ public class ContinuousSum {
                 }
             }
         }
-
-        System.out.println(result);
+        return result;
+    }
+    public static void main(String[] args) {
+        ContinuousSum T = new ContinuousSum();
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        System.out.println(T.solution(n));
     }
 }
