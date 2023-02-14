@@ -5,11 +5,7 @@ import java.util.Scanner;
 
 // 학급 회장 선출
 public class Student {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        String str = sc.next();
-
+    public char solution(String str){
         char result=' ';
         HashMap<Character, Integer> map = new HashMap<>();
         for(char c : str.toCharArray()) {
@@ -22,7 +18,12 @@ public class Student {
                 result = c;
             }
         }
-
-        System.out.println(result);
+        return result;
+    }
+    public static void main(String[] args) {
+        Student T = new Student();
+        Scanner sc = new Scanner(System.in);
+        String str = sc.next();
+        System.out.println(T.solution(str));
     }
 }
