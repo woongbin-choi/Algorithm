@@ -13,7 +13,7 @@ public class Anagram {
         }
         for (char x : b.toCharArray()) {
             if(!map.containsKey(x) || map.get(x) == 0) {
-                result = "NO";
+                return "NO";
             }
             map.put(x, map.get(x) -1);
         }
