@@ -5,11 +5,7 @@ import java.util.Scanner;
 
 // 모든 아나그램 찾기
 public class AllAnagram {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String a = sc.next();
-        String b = sc.next();
-
+    public int solution(String a, String b) {
         int answer = 0;
         HashMap<Character, Integer> am = new HashMap<>();
         HashMap<Character, Integer> bm = new HashMap<>();
@@ -34,7 +30,13 @@ public class AllAnagram {
             }
             lt++;
         }
-
-        System.out.println(answer);
+        return answer;
+    }
+    public static void main(String[] args) {
+        AllAnagram T = new AllAnagram();
+        Scanner sc = new Scanner(System.in);
+        String a = sc.next();
+        String b = sc.next();
+        System.out.println(T.solution(a,b));
     }
 }
