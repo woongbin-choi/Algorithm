@@ -6,15 +6,7 @@ import java.util.TreeSet;
 
 // k번째 큰 수
 public class K {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int k = sc.nextInt();
-        int[] arr = new int[n];
-        for(int i = 0; i < n; ++i) {
-            arr[i] = sc.nextInt();
-        }
-
+    public int solution(int n, int k, int[] arr){
         int result = -1;
         TreeSet<Integer> Tset = new TreeSet<>(Collections.reverseOrder());
         for(int i = 0; i < n; ++i) {
@@ -31,7 +23,17 @@ public class K {
                 result = x;
             }
         }
-
-        System.out.println(result);
+        return result;
+    }
+    public static void main(String[] args) {
+        K T = new K();
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int k = sc.nextInt();
+        int[] arr = new int[n];
+        for(int i = 0; i < n; ++i) {
+            arr[i] = sc.nextInt();
+        }
+        System.out.println(T.solution(n,k,arr));
     }
 }
